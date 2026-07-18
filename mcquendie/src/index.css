@@ -41,6 +41,20 @@ body { margin: 0; background: var(--bg); }
 /* Remove underlines globally for links and text */
 a, a:visited { text-decoration: none; color: inherit }
 
+/* Smooth scroll for anchor navigation */
+html { scroll-behavior: smooth }
+
+/* Social brand hover colors */
+.social.linkedin:hover { color: #0a66c2 }
+.social.email:hover { color: #16a34a }
+.social.tiktok:hover { color: #111111 }
+.social.instagram:hover { color: #e4405f }
+.social.x:hover { color: #000000 }
+.social.facebook:hover { color: #1877f2 }
+.social.threads:hover { color: #101010 }
+.social.whatsapp:hover { color: #25d366 }
+.social.github:hover { color: #111827 }
+
 #root {
   width: var(--container-width);
   max-width: 100%;

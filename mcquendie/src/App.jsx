@@ -1,11 +1,23 @@
 import { useEffect, useState, useRef } from 'react'
 import './App.css'
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaFacebook, FaWhatsapp } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaFacebook, FaWhatsapp, FaPaintBrush, FaLaptopCode, FaFileAlt } from 'react-icons/fa'
 import { SiTiktok, SiThreads } from 'react-icons/si'
+import useEmblaCarousel from 'embla-carousel-react'
 import digilabImg from './assets/digilab.png'
 import greenyImg from './assets/greeny.png'
 import polysiteImg from './assets/polysite.png'
 import portraitImg from './assets/mcquendie_picture.jpg'
+import html5Img from './assets/html5.jpg'
+import css3Img from './assets/css3.jpg'
+import javascriptImg from './assets/javascript.png'
+import reactImg from './assets/react.png'
+import supabaseImg from './assets/supabase.jpg'
+import tailwindImg from './assets/tailwind.jpg'
+import figmaImg from './assets/figma.png'
+import cursorImg from './assets/cursor.jpg'
+import codexImg from './assets/codex.jpg'
+import vercelImg from './assets/vercel.jpg'
+import gitImg from './assets/git.png'
 
 const TAGLINES = [
   'I design it, build it, and write the words that sell it.',
@@ -47,6 +59,12 @@ function useTypewriter(lines, typeSpeed = 40, pause = 1600) {
 
 function Nav() {
   const [open, setOpen] = useState(false)
+  const handleNavClick = (e, selector) => {
+    e.preventDefault()
+    const el = document.querySelector(selector)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setOpen(false)
+  }
   return (
     <nav className="nav container">
       <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
@@ -54,10 +72,10 @@ function Nav() {
       </div>
 
       <div className="links" aria-hidden={open ? 'false' : 'true'}>
-        <a href="#about" onClick={() => setOpen(false)}>About</a>
-        <a href="#services" onClick={() => setOpen(false)}>Services</a>
-        <a href="#work" onClick={() => setOpen(false)}>Work</a>
-        <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+        <a href="#about" onClick={(e)=>handleNavClick(e,'#about')}>About</a>
+        <a href="#services" onClick={(e)=>handleNavClick(e,'#services')}>Services</a>
+        <a href="#work" onClick={(e)=>handleNavClick(e,'#work')}>Work</a>
+        <a href="#contact" onClick={(e)=>handleNavClick(e,'#contact')}>Contact</a>
         <a className="cta" href="/Mcquendie_Obodos_Resume.pdf" target="_blank">Resume</a>
       </div>
 
@@ -91,6 +109,8 @@ function Hero() {
     const onScroll = () => {
       const y = window.scrollY
       document.documentElement.style.setProperty('--blob-y', `${y * 0.06}px`)
+      const portrait = document.querySelector('.portrait')
+      if (portrait) portrait.style.transform = `translateY(${y * 0.02}px)`
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -142,15 +162,15 @@ function Services() {
       <h1>What I do</h1>
       <div className="services-grid reveal" style={{ marginTop: 18 }}>
         <div className="card">
-          <h3>Web Design</h3>
+          <div style={{display:'flex', gap:12, alignItems:'center'}}><FaPaintBrush size={28} style={{color:'var(--accent)'}} /><h3>Web Design</h3></div>
           <p>Interfaces people actually want to use — clean, intentional, and built to convert.</p>
         </div>
         <div className="card">
-          <h3>Web Development</h3>
+          <div style={{display:'flex', gap:12, alignItems:'center'}}><FaLaptopCode size={28} style={{color:'var(--accent)'}} /><h3>Web Development</h3></div>
           <p>Fast, responsive builds with clean component architecture, from landing page to full product.</p>
         </div>
         <div className="card">
-          <h3>Copywriting & SEO</h3>
+          <div style={{display:'flex', gap:12, alignItems:'center'}}><FaFileAlt size={28} style={{color:'var(--accent)'}} /><h3>Copywriting & SEO</h3></div>
           <p>Words that rank, read well, and move people to act.</p>
         </div>
       </div>
@@ -190,30 +210,51 @@ function Projects() {
 
 function Tech() {
   const items = [
-    { k: 'HTML5', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 2l1.8 18L12 22l7.2-2L21 2H3z" stroke="currentColor" strokeWidth="0.8" fill="none"/></svg>) },
-    { k: 'CSS3', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 3h16l-1.4 16L12 21l-6.6-2L4 3z" stroke="currentColor" strokeWidth="0.8" fill="none"/></svg>) },
-    { k: 'JavaScript', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="0.8" fill="none"/></svg>) },
-    { k: 'React', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="0.9"/><path d="M2 12c4-6 8-6 10-6s6 0 10 6c-4 6-8 6-10 6S6 18 2 12z" stroke="currentColor" strokeWidth="0.9" fill="none"/></svg>) },
-    { k: 'Supabase', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20" stroke="currentColor" strokeWidth="0.9"/></svg>) },
-    { k: 'Tailwind', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 15c4-6 8-6 20-4" stroke="currentColor" strokeWidth="0.9"/></svg>) },
-    { k: 'Figma', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="7" r="2" stroke="currentColor" strokeWidth="0.9"/><rect x="7" y="10" width="2" height="6" rx="1" stroke="currentColor" strokeWidth="0.9"/></svg>) },
-    { k: 'Cursor', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3l18 9-18 9V3z" stroke="currentColor" strokeWidth="0.9" fill="none"/></svg>) },
-    { k: 'Codex', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4z" stroke="currentColor" strokeWidth="0.9" fill="none"/></svg>) },
-    { k: 'Vercel', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l8 16H4l8-16z" stroke="currentColor" strokeWidth="0.9" fill="none"/></svg>) },
-    { k: 'Git', svg: (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20" stroke="currentColor" strokeWidth="0.9"/></svg>) }
+    { k: 'HTML5', img: html5Img },
+    { k: 'CSS3', img: css3Img },
+    { k: 'JavaScript', img: javascriptImg },
+    { k: 'React', img: reactImg },
+    { k: 'Supabase', img: supabaseImg },
+    { k: 'Tailwind', img: tailwindImg },
+    { k: 'Figma', img: figmaImg },
+    { k: 'Cursor', img: cursorImg },
+    { k: 'Codex', img: codexImg },
+    { k: 'Vercel', img: vercelImg },
+    { k: 'Git', img: gitImg }
   ]
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, containScroll: 'trimSnaps', align: 'center', draggable: true, speed: 8 })
+
+  useEffect(() => {
+    if (!emblaApi) return
+    const autoScroll = setInterval(() => {
+      if (!emblaApi) return
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext()
+      } else {
+        emblaApi.scrollTo(0)
+      }
+    }, 2800)
+    return () => clearInterval(autoScroll)
+  }, [emblaApi])
+
   return (
     <section className="tech container" id="tech">
       <h2>Toolbox</h2>
       <h1>Tech stack</h1>
       <div className="tech-row reveal" style={{ marginTop: 16 }}>
-        <div className="tech-carousel">
-          {items.map(i => (
-            <div className="tech-card" key={i.k} title={i.k}>
-              <span className="icon">{i.svg}</span>
-              <div style={{ fontWeight:700 }}>{i.k}</div>
-            </div>
-          ))}
+        <div className="embla" ref={emblaRef}>
+          <div className="embla__container">
+            {items.map(i => (
+              <div className="embla__slide" key={i.k}>
+                <div className="tech-card" title={i.k}>
+                  <div className="tech-image">
+                    <img src={i.img} alt={i.k} />
+                  </div>
+                  <div className="tech-name">{i.k}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -222,15 +263,16 @@ function Tech() {
 
 function Contact() {
     const socials = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com', icon: <FaLinkedin size={24} /> },
-    { name: 'GitHub', url: 'https://github.com', icon: <FaGithub size={24} /> },
-    { name: 'Instagram', url: 'https://instagram.com', icon: <FaInstagram size={24} /> },
-    { name: 'TikTok', url: 'https://tiktok.com', icon: <SiTiktok size={24} /> },
-    { name: 'X', url: 'https://x.com', icon: <FaTwitter size={24} /> },
-    { name: 'Facebook', url: 'https://facebook.com', icon: <FaFacebook size={24} /> },
-    { name: 'Threads', url: 'https://www.threads.net', icon: <SiThreads size={24} /> },
-    { name: 'WhatsApp', url: 'https://wa.me/', icon: <FaWhatsapp size={24} /> }
-  ]
+      { name: 'LinkedIn', class: 'linkedin', url: 'https://www.linkedin.com/in/mcquendie-obodos-0536883aa/', icon: <FaLinkedin size={24} /> },
+      { name: 'Email', class: 'email', url: 'mailto:obodosmcquendie@gmail.com', icon: <FaGithub size={24} /> },
+      { name: 'TikTok', class: 'tiktok', url: 'https://www.tiktok.com/@mcquendie_?_t=ZM-8xchTobGSxk&_r=1', icon: <SiTiktok size={24} /> },
+      { name: 'Instagram', class: 'instagram', url: 'https://www.instagram.com/mcquendie_?igsh=MTIveTh3cHhpa2VyaA==', icon: <FaInstagram size={24} /> },
+      { name: 'X', class: 'x', url: 'https://x.com/Mcquendie', icon: <FaTwitter size={24} /> },
+      { name: 'Facebook', class: 'facebook', url: 'https://www.facebook.com/mcquendie.obodos?rdid=CD2DsSKwCykU5hoo&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GrENVQY8S%2F#', icon: <FaFacebook size={24} /> },
+      { name: 'Threads', class: 'threads', url: 'https://www.threads.com/@mcquendie_', icon: <SiThreads size={24} /> },
+      { name: 'WhatsApp', class: 'whatsapp', url: 'https://wa.me/message/PR6PLI5D6K4MJ1', icon: <FaWhatsapp size={24} /> },
+      { name: 'GitHub', class: 'github', url: 'https://github.com/mcObd', icon: <FaGithub size={24} /> }
+    ]
 
   return (
     <section className="contact container" id="contact">
