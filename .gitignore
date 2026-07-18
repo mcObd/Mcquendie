@@ -1,0 +1,6 @@
+node_modules/
+dist/
+mcquendie/dist/
+.env
+.env.local
+.vercel/
