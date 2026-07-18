@@ -1,20 +1,18 @@
 :root {
-  /* Brand tokens - warm espresso palette */
-  --bg: #2b1d14;
-  --surface: #3a261b;
-  --text: #dcd1c6;
-  --text-muted: #bfaea0;
-  --text-strong: #fff7f2;
-  --border: rgba(92,58,33,0.18);
-  --shadow: 0 10px 30px rgba(28,18,13,0.6);
+  /* Light ash theme */
+  --bg: #f6f4ef; /* user-provided background */
+  --surface: #ffffff;
+  --text: #121212;
+  --text-muted: #6b6b6b;
+  --text-strong: #0b0b0b;
+  --border: rgba(18,18,18,0.06);
+  --shadow: 0 10px 30px rgba(8,8,8,0.06);
 
-  --caramel: #a9702f;
-  --copper: #c98a4b;
-  --sand: #d9b48f;
-  --bronze: #5c3a21;
-
-  --glass: rgba(255,255,255,0.03);
-  --glass-2: rgba(255,255,255,0.02);
+  /* neutral accents (ash/grey) */
+  --accent: #92979b;
+  --accent-2: #bfc4c6;
+  --glass: rgba(18,18,18,0.02);
+  --glass-2: rgba(18,18,18,0.01);
 
   --sans: Inter, Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --heading: 'Space Grotesk', 'Clash Display', 'General Sans', system-ui, sans-serif;
@@ -22,7 +20,7 @@
 
   font: 18px/1.6 var(--sans);
   letter-spacing: 0.2px;
-  color-scheme: dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -39,6 +37,9 @@
 }
 
 body { margin: 0; background: var(--bg); }
+
+/* Remove underlines globally for links and text */
+a, a:visited { text-decoration: none; color: inherit }
 
 #root {
   width: var(--container-width);

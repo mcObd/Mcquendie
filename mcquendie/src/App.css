@@ -20,9 +20,9 @@
 
 .nav .brand { font-family: var(--heading); font-weight:700; color:var(--text-strong); }
 .nav .links { display:flex; gap:18px; align-items:center }
-.nav a { color:var(--text-muted); text-decoration:none; padding:6px 10px; border-radius:8px }
+.nav a { color:var(--text-muted); padding:6px 10px; border-radius:8px }
 .nav a:hover { color:var(--text-strong); background:var(--glass) }
-.nav .cta { background: linear-gradient(90deg,var(--caramel),var(--copper)); color:var(--text-strong); padding:8px 12px; border-radius:8px; box-shadow:var(--shadow)}
+.nav .cta { background: linear-gradient(90deg,var(--accent-2),var(--accent)); color:var(--text-strong); padding:8px 12px; border-radius:8px; box-shadow:var(--shadow)}
 
 /* Mobile hamburger */
 .mobile-toggle { display:none; background:transparent; border:0; padding:8px; cursor:pointer }
@@ -41,19 +41,19 @@
 .hero-left { flex:1 }
 .hero-right { flex:1; display:flex; justify-content:center }
 .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height:0.95; margin-bottom:12px }
-.tagline { color:var(--sand); font-weight:600; margin-bottom:12px }
+.tagline { color:var(--accent); font-weight:600; margin-bottom:12px }
 .hero p { max-width:640px; color:var(--text-muted); margin-bottom:18px }
 .hero .actions { display:flex; gap:12px }
 .btn { padding:12px 18px; border-radius:10px; border:1px solid transparent; cursor:pointer }
-.btn.primary { background: linear-gradient(90deg,var(--caramel),var(--copper)); color:var(--text-strong); box-shadow:var(--shadow) }
-.btn.ghost { background: transparent; border:1px solid rgba(255,255,255,0.04); color:var(--text); }
+.btn.primary { background: linear-gradient(90deg,var(--accent-2),var(--accent)); color:var(--text-strong); box-shadow:var(--shadow) }
+.btn.ghost { background: transparent; border:1px solid rgba(0,0,0,0.04); color:var(--text); }
 
-.bg-blob { position:absolute; right:-8%; top:10%; width:520px; height:520px; background: radial-gradient(circle at 20% 30%, rgba(201,138,75,0.16), rgba(169,112,47,0.08) 40%, transparent 60%); filter: blur(36px); transform: translateZ(0); pointer-events:none }
+.bg-blob { position:absolute; right:-8%; top:10%; width:520px; height:520px; background: radial-gradient(circle at 20% 30%, rgba(120,125,130,0.12), rgba(160,164,167,0.06) 40%, transparent 60%); filter: blur(36px); transform: translateZ(0); pointer-events:none }
 
 .about, .services, .projects, .tech, .contact { padding:56px 0; }
 
 .chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
-.chip { background: rgba(255,255,255,0.02); color:var(--text); padding:8px 10px; border-radius:999px; font-weight:600; border:1px solid rgba(255,255,255,0.02) }
+.chip { background: rgba(0,0,0,0.03); color:var(--text); padding:10px 12px; border-radius:999px; font-weight:600; border:1px solid rgba(0,0,0,0.04); font-size:15px }
 
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
 .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.02); transition: transform 0.28s, box-shadow 0.28s }
@@ -62,16 +62,21 @@
 
 .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
 .project { overflow:hidden }
-.project img { width:100%; height:200px; object-fit:cover; border-radius:10px }
+.project img { width:100%; height:220px; object-fit:cover; border-radius:10px }
 .project .meta { padding:12px }
 .project .tech { display:flex; gap:8px; flex-wrap:wrap }
 
-.tech-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center }
-.tech-item { background: rgba(255,255,255,0.02); padding:10px 12px; border-radius:8px; display:flex; gap:10px; align-items:center }
+.tech-row { display:flex; gap:14px; flex-wrap:nowrap; align-items:center }
+
+/* Carousel-style tech row */
+.tech-carousel { display:flex; gap:16px; overflow-x:auto; padding:12px 6px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch }
+.tech-card { min-width:160px; scroll-snap-align: center; background: var(--surface); border:1px solid var(--border); padding:18px; border-radius:12px; display:flex; gap:12px; align-items:center; box-shadow: var(--shadow); font-size:18px }
+.tech-card span.icon { width:32px; height:32px; display:inline-flex; align-items:center; justify-content:center; color:var(--accent) }
 
 .contact .cta-row { display:flex; gap:12px; align-items:center }
 .social-grid { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px }
-.social { display:flex; gap:8px; align-items:center; padding:8px 10px; background: rgba(255,255,255,0.02); border-radius:10px }
+.social { display:flex; gap:10px; align-items:center; padding:12px 14px; background: rgba(0,0,0,0.03); border-radius:12px; font-weight:700; font-size:16px }
+.social span.icon { width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; color:var(--accent) }
 
 .footer { padding:28px 0; border-top:1px solid var(--border); color:var(--text-muted); display:flex; justify-content:space-between }
 
@@ -85,10 +90,29 @@
 .reveal { opacity: 0; transform: translateY(12px); transition: opacity 560ms ease, transform 560ms ease; will-change: opacity, transform }
 .reveal.visible { opacity: 1; transform: none }
 
-.typing { color: var(--sand); font-weight:600 }
+.typing { color: var(--accent); font-weight:600 }
 
 /* Typewriter cursor */
 .typing { position: relative; padding-right: 14px }
 .typing::after { content: ''; position: absolute; right: 4px; top: 0; width: 2px; height: 1.05em; background: var(--text-strong); animation: blink 1s steps(1,start) infinite }
 @keyframes blink { 50% { opacity: 0 } }
+
+/* Portrait hover: default grayscale, reveal color on hover */
+.portrait img { filter: grayscale(100%); transition: filter 260ms ease, transform 260ms ease, box-shadow 260ms ease; border-radius:16px }
+.portrait img:hover { filter: grayscale(0%); transform: scale(1.02); box-shadow: 0 14px 40px rgba(0,0,0,0.08) }
+
+/* Social icon hover color + lift */
+.social span.icon { transition: color 200ms ease, transform 200ms ease; color:var(--accent) }
+.social:hover span.icon { color:var(--accent-2); transform: translateY(-3px) }
+
+/* Tech icon size inside cards */
+.tech-card .icon svg { width:28px; height:28px }
+
+@media (max-width: 600px) {
+  .social { padding:14px 16px; font-size:18px }
+  .social span.icon { width:26px; height:26px }
+  .tech-card { min-width:200px; padding:20px }
+  .tech-card { font-size:18px }
+  .tech-carousel { gap:20px }
+}
 
