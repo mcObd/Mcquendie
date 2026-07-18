@@ -77,6 +77,7 @@ function Nav() {
         <a href="#services" onClick={(e)=>handleNavClick(e,'#services')}>Services</a>
         <a href="#work" onClick={(e)=>handleNavClick(e,'#work')}>Work</a>
         <a href="#contact" onClick={(e)=>handleNavClick(e,'#contact')}>Contact</a>
+        <a href="#privacy" onClick={(e)=>handleNavClick(e,'#privacy')}>Privacy</a>
         <a className="cta" href={resumePdf} download="Mcquendie_Obodos_Resume.pdf">Resume</a>
       </div>
 
@@ -95,6 +96,7 @@ function Nav() {
           <a href="#services" onClick={() => setOpen(false)}>Services</a>
           <a href="#work" onClick={() => setOpen(false)}>Work</a>
           <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          <a href="#privacy" onClick={() => setOpen(false)}>Privacy</a>
           <a className="cta" href={resumePdf} download="Mcquendie_Obodos_Resume.pdf">Resume</a>
         </div>
       )}
@@ -297,6 +299,33 @@ function Contact() {
   )
 }
 
+function PrivacyPolicy() {
+  return (
+    <section className="privacy container" id="privacy">
+      <h2>Privacy Policy</h2>
+      <h1>How this website handles your information</h1>
+      <div className="privacy-content reveal">
+        <p>
+          This website is a personal portfolio for Mcquendie Obodos. It does not sell, rent, or trade visitor information.
+        </p>
+        <p>
+          If you contact me by email, WhatsApp, or any linked social platform, I may receive the information you choose to send, such as your name, email address, phone number, message, or project details. I use that information only to respond to you and discuss the work you contacted me about.
+        </p>
+        <p>
+          This site may link to third-party websites and platforms, including LinkedIn, GitHub, Instagram, TikTok, X, Facebook, Threads, WhatsApp, and live project links. Those services have their own privacy policies and practices.
+        </p>
+        <p>
+          The site may be hosted by a third-party hosting provider that processes standard technical data such as IP address, browser type, device information, and request logs for security, performance, and reliability.
+        </p>
+        <p>
+          To request access, correction, or deletion of information you have sent directly to me, contact me at <a href="mailto:obodosmcquendie@gmail.com">obodosmcquendie@gmail.com</a>.
+        </p>
+        <p>Last updated: July 18, 2026.</p>
+      </div>
+    </section>
+  )
+}
+
 // small intersection observer for reveal-on-scroll
 function useReveal() {
   useEffect(() => {
@@ -324,6 +353,7 @@ function Footer() {
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy</a>
       </div>
     </footer>
   )
@@ -341,6 +371,7 @@ function App() {
         <Projects />
         <Tech />
         <Contact />
+        <PrivacyPolicy />
       </main>
       <Footer />
     </div>

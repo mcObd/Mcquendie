@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap');
+
 :root {
   /* Light ash theme */
   --bg: #f6f4ef; /* user-provided background */
@@ -28,9 +30,6 @@
 
   --container-width: 1100px;
 }
-
-/* Fonts — include recommended families (user may add or adjust locally) */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap');
 
 @media (max-width: 1024px) {
   :root { font-size: 16px; }

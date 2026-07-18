@@ -50,7 +50,7 @@
 
 .bg-blob { position:absolute; right:-8%; top:10%; width:520px; height:520px; background: radial-gradient(circle at 20% 30%, rgba(120,125,130,0.12), rgba(160,164,167,0.06) 40%, transparent 60%); filter: blur(36px); transform: translateZ(0); pointer-events:none }
 
-.about, .services, .projects, .tech, .contact { padding:56px 0; }
+.about, .services, .projects, .tech, .contact, .privacy { padding:56px 0; }
 
 .chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
 .chip { background: rgba(0,0,0,0.03); color:var(--text); padding:10px 12px; border-radius:999px; font-weight:600; border:1px solid rgba(0,0,0,0.04); font-size:15px }
@@ -85,6 +85,9 @@
 .social-grid { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px }
 .social { display:flex; gap:10px; align-items:center; padding:12px 14px; background: rgba(0,0,0,0.03); border-radius:12px; font-weight:700; font-size:16px }
 .social span.icon { width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; color:var(--accent) }
+
+.privacy-content { margin-top:18px; display:grid; gap:14px; max-width:840px; color:var(--text-muted) }
+.privacy-content a { color:var(--text-strong); font-weight:700; border-bottom:1px solid var(--accent) }
 
 .footer { padding:28px 0; border-top:1px solid var(--border); color:var(--text-muted); display:flex; justify-content:space-between }
 
@@ -136,4 +139,3 @@
   .tech-card { font-size:18px }
   .tech-carousel { gap:20px }
 }
-
