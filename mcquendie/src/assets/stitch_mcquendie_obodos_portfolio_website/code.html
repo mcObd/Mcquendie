@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mcquendie Obodos | Neo-Renaissance Digital Craftsman</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#F5F2ED",
+                "on-background": "#1A1A1A",
+                "primary": "#CC5500",
+                "on-primary": "#F5F2ED",
+                "surface": "#F5F2ED",
+                "on-surface": "#1A1A1A",
+                "outline": "#D1CDC7",
+                "accent": "#CC5500",
+                "secondary-text": "#666666"
+            },
+            "borderRadius": {
+                "DEFAULT": "0px",
+                "lg": "0px",
+                "xl": "0px",
+                "full": "0px"
+            },
+            "spacing": {
+                "section-gap-mobile": "100px",
+                "section-gap-desktop": "220px",
+                "unit": "8px",
+                "gutter": "64px",
+                "margin-mobile": "32px",
+                "container-max": "1300px"
+            },
+            "fontFamily": {
+                "serif": ["Playfair Display", "serif"],
+                "sans": ["Inter", "sans-serif"],
+                "display-lg": ["Playfair Display"],
+                "headline-md": ["Playfair Display"],
+                "body-lg": ["Playfair Display"],
+                "body-md": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F5F2ED;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+        }
+        .serif-italic { font-style: italic; }
+        .bg-text {
+            position: absolute;
+            font-size: 25vw;
+            line-height: 0.8;
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: -1;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .grainy-bw {
+            filter: grayscale(100%) contrast(110%) brightness(95%);
+            mix-blend-mode: multiply;
+        }
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .scroll-item {
+            scroll-snap-align: start;
+            flex: 0 0 auto;
+        }
+        .line-separator {
+            height: 1px;
+            background-color: rgba(26, 26, 26, 0.08);
+            width: 100%;
+        }
+        ::selection {
+            background-color: #CC5500;
+            color: #F5F2ED;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-on-background overflow-x-hidden font-serif antialiased">
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-md">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-24 border-b border-outline/20">
+<a class="text-xl font-bold tracking-[0.2em] uppercase" href="#">Mcquendie</a>
+<div class="hidden md:flex items-center gap-16 font-medium text-[10px] tracking-[0.25em] uppercase">
+<a class="hover:text-accent transition-colors" href="#about">The Craftsman</a>
+<a class="hover:text-accent transition-colors" href="#services">The Method</a>
+<a class="hover:text-accent transition-colors" href="#work">The Gallery</a>
+<a class="hover:text-accent transition-colors" href="#contact">The Dialogue</a>
+<a class="ml-4 px-8 py-2 border border-on-background/20 hover:border-on-background hover:bg-on-background hover:text-background transition-all" href="#">Folio</a>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</nav>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center relative overflow-hidden px-margin-mobile md:px-gutter max-w-container-max mx-auto pt-32 pb-20" id="hero">
+<div class="bg-text top-1/4 -left-20">CRAFT</div>
+<div class="grid md:grid-cols-12 gap-20 items-center w-full">
+<div class="md:col-span-7 z-10">
+<span class="block text-accent font-semibold tracking-[0.4em] uppercase mb-10 text-[11px] italic">Anno MMXXIV — Digital Atelier</span>
+<h1 class="text-[10vw] md:text-[7vw] leading-[0.9] font-light tracking-tight mb-16">
+                    The Art of the <br/><span class="serif-italic font-light">Interface</span>.
+                </h1>
+<div class="max-w-xl">
+<p class="text-xl md:text-2xl leading-relaxed mb-16 font-light text-secondary-text">
+                        I sculpt high-end digital solutions where <span class="serif-italic text-on-background">aesthetic precision</span> meets absolute technical rigor.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-8">
+<a class="group flex items-center gap-4 text-sm tracking-[0.2em] font-bold uppercase border-b border-accent/30 pb-2 hover:border-accent transition-all" href="#contact">
+                            Commence Project
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-2 text-base">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative mt-12 md:mt-0">
+<div class="relative z-10 grayscale-container">
+<img alt="Mcquendie Obodos" class="w-full aspect-[4/5] object-cover grainy-bw" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBi7-O0Vu18zqmFP-dSFgAoQ8yB2roppn7KbCU9trJJBenS4O8-j2ScrSW5xXuCbzCp-Ac2uGtxVxw3-wdY_i6OSpinK7XD4F5QyahblZcG8h61sujG56QZ01RyvBmrXvfBi-8il72ka1lOkga0DXtUuyhLKwH4yxxDrjXV--DLHu2FFY2Lre2KkupwdrYNiD4P2KOkd0Tydl98Otr_vuLKbb4lDEfyJTPZELfZ9TmLVvSYj2qcP6RMpQT2RNJnyTzolRntbWn158K"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-40 h-40 border border-accent/10 flex items-center justify-center text-[10px] tracking-[0.3em] text-accent/60 text-center p-6 bg-background/40 backdrop-blur-sm">
+                    FIVE YEARS <br/>OF MASTERY
+                </div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max mx-auto relative" id="about">
+<div class="bg-text -right-40 bottom-0">POESY</div>
+<div class="grid md:grid-cols-2 gap-32 items-start">
+<div class="space-y-16">
+<h2 class="text-4xl md:text-5xl font-light italic leading-tight">The Craftsman's <br/>Philosophy</h2>
+<div class="line-separator"></div>
+<div class="space-y-10 text-lg md:text-xl leading-relaxed font-light text-secondary-text">
+<p>
+                        I believe in digital environments that feel <span class="serif-italic text-on-background font-normal">intentional</span>. Every pixel is a calculated stroke; every line of code is a structural necessity.
+                    </p>
+<p>
+                        My journey bridges the gap between classic design principles and the future of the web. Currently deepening my mastery in C# and Java to architect ecosystems that are as robust as they are beautiful.
+                    </p>
+</div>
+</div>
+<div class="bg-on-background/[0.02] p-16 md:p-24 relative border border-on-background/[0.03]">
+<h3 class="text-[10px] font-bold tracking-[0.5em] uppercase mb-16 opacity-40">The Arsenal</h3>
+<div class="grid grid-cols-2 gap-y-12 gap-x-12 text-base">
+<div class="group">
+<p class="font-normal border-b border-on-background/5 pb-3 group-hover:border-accent transition-colors">React &amp; JS</p>
+</div>
+<div class="group">
+<p class="font-normal border-b border-on-background/5 pb-3 group-hover:border-accent transition-colors">Supabase</p>
+</div>
+<div class="group">
+<p class="font-normal border-b border-on-background/5 pb-3 group-hover:border-accent transition-colors">Tailwind CSS</p>
+</div>
+<div class="group">
+<p class="font-normal border-b border-on-background/5 pb-3 group-hover:border-accent transition-colors">Figma</p>
+</div>
+<div class="group">
+<p class="font-normal border-b border-on-background/5 pb-3 group-hover:border-accent transition-colors">C# &amp; Java</p>
+</div>
+<div class="group">
+<p class="font-normal border-b border-on-background/5 pb-3 group-hover:border-accent transition-colors">Architecture</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-on-background text-background overflow-hidden relative" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-32 gap-12">
+<h2 class="text-6xl md:text-8xl font-light italic">The Method</h2>
+<p class="max-w-xs text-[10px] tracking-[0.4em] uppercase opacity-40 text-right">A synthesis of logic, poetry, and technical execution.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-px bg-background/5">
+<div class="py-24 md:px-16 group hover:bg-accent transition-all duration-1000 border-l border-background/5 first:border-l-0">
+<span class="text-accent group-hover:text-background text-5xl mb-16 block serif-italic font-light">01.</span>
+<h3 class="text-2xl font-normal mb-10 tracking-wide">Interface Design</h3>
+<p class="text-base opacity-50 leading-relaxed font-light">Creating digital tapestries that guide the user with grace and effortless clarity. No noise, only essence.</p>
+</div>
+<div class="py-24 md:px-16 group hover:bg-accent transition-all duration-1000 border-l border-background/5">
+<span class="text-accent group-hover:text-background text-5xl mb-16 block serif-italic font-light">02.</span>
+<h3 class="text-2xl font-normal mb-10 tracking-wide">The Build</h3>
+<p class="text-base opacity-50 leading-relaxed font-light">Performance as a form of respect. Fast, accessible, and structured with the precision of a master builder.</p>
+</div>
+<div class="py-24 md:px-16 group hover:bg-accent transition-all duration-1000 border-l border-background/5">
+<span class="text-accent group-hover:text-background text-5xl mb-16 block serif-italic font-light">03.</span>
+<h3 class="text-2xl font-normal mb-10 tracking-wide">Prose &amp; Conversion</h3>
+<p class="text-base opacity-50 leading-relaxed font-light">Copy that resonates. Weave storytelling into strategy to ensure every word serves a purposeful end.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Work Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="work">
+<div class="flex justify-between items-baseline mb-24">
+<h2 class="text-5xl md:text-7xl font-light">The Gallery</h2>
+<a class="text-[10px] tracking-[0.4em] uppercase font-bold hover:text-accent flex items-center gap-3 transition-colors" href="#">Archive <span class="material-symbols-outlined text-[10px]">north_east</span></a>
+</div>
+<div class="horizontal-scroll gap-20 pb-12">
+<!-- Project 1 -->
+<div class="scroll-item w-[80vw] md:w-[600px]">
+<div class="mb-10 overflow-hidden bg-on-background/[0.02]">
+<img alt="DigiLab" class="w-full aspect-square object-cover grainy-bw hover:scale-[1.02] transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBheQPfMxdK6p_IwfneCJ-LpfsczDupJBvzDd8Q47ciMD0leHMNxD6E-HAnM_EtziMNQab9iKldRsp0llznQEAK8PAE78wR_cMPNImE5P1px4r_rUvs9NCBTgsBtu49XOOovxEMnji7GAR-j0i4CnVDM09xfWBI5i5ZXilRphWxAoyIx0ulXbLLqOxcPB_OwKoX4O4cTtRYKbIuN0DDWhbsLPp0W1oVeB3SW6lIXcID489E4y9mZ6Ux2MHbNBERLGdXR05LPaJev0Uk"/>
+</div>
+<span class="text-[10px] tracking-[0.4em] uppercase text-secondary-text mb-4 block">Web Atelier — 2023</span>
+<h3 class="text-3xl font-light italic mb-6">DigiLab</h3>
+<p class="text-base font-light text-secondary-text leading-relaxed mb-8 max-w-md">A symphony of minimalism for a modern digital laboratory.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-background/20 hover:text-accent cursor-pointer transition-colors text-xl">link</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="scroll-item w-[80vw] md:w-[450px]">
+<div class="mb-10 overflow-hidden bg-on-background/[0.02]">
+<img alt="Greeny" class="w-full aspect-[4/5] object-cover grainy-bw hover:scale-[1.02] transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkCRbiCcX2LBsMMDopTjcR1_Y9XaPDmfXEemwPZl7khV1fz3cowH3pQ17l5hdITfvHKa5-1gtQWUfY5y18tf2zxlxM3biVBeWzD0g7ImwgHQpP6CZl7rnbCTeN24sYZP6fLU3lpy8snyfhst9Bh986I1yn-DwY3XXR-EEWP2-eH5zc1D9qqBhYnXf6w3k94_uu96CJkARMoALOePeU_pxhArqKnWCwhwmFhuRYulSq2vF2_t2KMn-rywyYBCklPhY14p1n_QHXPRZx"/>
+</div>
+<span class="text-[10px] tracking-[0.4em] uppercase text-secondary-text mb-4 block">E-Commerce — 2023</span>
+<h3 class="text-3xl font-light italic mb-6">Greeny</h3>
+<p class="text-base font-light text-secondary-text leading-relaxed mb-8">Sustainable commerce presented through a classical lens.</p>
+</div>
+<!-- Project 3 -->
+<div class="scroll-item w-[80vw] md:w-[500px]">
+<div class="mb-10 overflow-hidden bg-on-background/[0.02]">
+<img alt="Poly Site" class="w-full aspect-[16/9] object-cover grainy-bw hover:scale-[1.02] transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ZDcAzjh7jvVnBuF2GwHg1zVjYtrul_v3Lh5WKXEcIAh1v-Xx4MFPMYuSqzHHWUKuZczYywhGQrV7IMhrLZ7DJXiGQNjfKxoHZTmbIAxOrlJ3J4TiWSfl6rJvKIxBbPwfLh8IRbj03iZ_H002QS951i1AnXX2D-fjC-MYYDuGqEyUAIqsLDCPHL125wqV5p2WzOsK_jEzfOTXbKNYOHKm1VfboVK8sTZ7V3fjUluCSASp5Xd8xhvpY6DaCMKyJiws7a9zfwwzAmM9"/>
+</div>
+<span class="text-[10px] tracking-[0.4em] uppercase text-secondary-text mb-4 block">Creative Space — 2024</span>
+<h3 class="text-3xl font-light italic mb-6">Poly Site</h3>
+<p class="text-base font-light text-secondary-text leading-relaxed mb-8">Bold typography and negative space for a creative collective.</p>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-gutter max-w-container-max mx-auto border-t border-on-background/5" id="contact">
+<div class="grid md:grid-cols-2 gap-32">
+<div>
+<h2 class="text-7xl md:text-[8rem] font-light leading-[0.85] mb-16">The <br/><span class="serif-italic">Dialogue</span>.</h2>
+<p class="text-xl font-light leading-relaxed mb-20 max-w-md text-secondary-text">
+                    Whether you seek to build an empire or refine a singular vision, I am ready to begin the discourse.
+                </p>
+<div class="space-y-16">
+<a class="block text-4xl md:text-5xl font-light tracking-tight hover:text-accent transition-colors break-all" href="mailto:hello@mcquendie.com">
+                        hello@mcquendie.com
+                    </a>
+<div class="flex flex-wrap gap-x-16 gap-y-8 text-[10px] tracking-[0.4em] uppercase font-bold text-secondary-text">
+<a class="hover:text-accent transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-accent transition-colors" href="#">GitHub</a>
+<a class="hover:text-accent transition-colors" href="#">Instagram</a>
+<a class="hover:text-accent transition-colors" href="#">X</a>
+</div>
+</div>
+</div>
+<div class="hidden md:flex items-center justify-center opacity-[0.03]">
+<span class="material-symbols-outlined text-[35rem] select-none">edit_square</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="py-32 border-t border-on-background/5 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-16">
+<div class="text-center md:text-left">
+<span class="text-xl font-bold uppercase tracking-[0.3em] mb-6 block">Mcquendie Obodos</span>
+<p class="text-[10px] tracking-[0.4em] uppercase text-secondary-text">Artisan of the Digital Interface — © 2024</p>
+</div>
+<div class="flex gap-16 font-bold uppercase text-[10px] tracking-[0.4em] text-secondary-text">
+<a class="hover:text-accent transition-colors" href="#hero">Top</a>
+<a class="hover:text-accent transition-colors" href="#about">About</a>
+<a class="hover:text-accent transition-colors" href="#work">Work</a>
+<a class="hover:text-accent transition-colors" href="#contact">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+    const observerOptions = {
+        threshold: 0.05
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-[1200ms]', 'ease-out');
+    });
+</script>
+</body></html>
