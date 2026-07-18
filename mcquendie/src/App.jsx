@@ -140,7 +140,7 @@ function Hero() {
       </div>
 
       <div className="hero-right">
-        <div className="portrait reveal" style={{ width: 420, maxWidth: '92%' }}>
+        <div className="portrait reveal" style={{ width: '100%', maxWidth: 420 }}>
           <img src={portraitImg} alt="Mcquendie Obodos" style={{ width: '100%', borderRadius: 16, boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} />
         </div>
       </div>
