@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { forwardRef, useEffect, useState, useRef } from 'react'
 import './App.css'
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaFacebook, FaWhatsapp, FaPaintBrush, FaLaptopCode, FaFileAlt } from 'react-icons/fa'
 import { SiTiktok, SiThreads } from 'react-icons/si'
@@ -305,9 +305,9 @@ function Contact() {
   )
 }
 
-function PrivacyPolicy() {
+const PrivacyPolicy = forwardRef(function PrivacyPolicy(_, ref) {
   return (
-    <section className="privacy container" id="privacy">
+    <section className="privacy container" id="privacy" ref={ref}>
       <h2>Privacy Policy</h2>
       <h1>How this website handles your information</h1>
       <div className="privacy-content reveal">
@@ -330,7 +330,7 @@ function PrivacyPolicy() {
       </div>
     </section>
   )
-}
+})
 
 // small intersection observer for reveal-on-scroll
 function useReveal() {
@@ -367,18 +367,27 @@ function Footer({ onOpenPrivacy }) {
 
 function App() {
   const [privacyOpen, setPrivacyOpen] = useState(false)
+  const privacyRef = useRef(null)
 
   useReveal()
 
+  const showPrivacy = () => {
+    setPrivacyOpen(true)
+    setTimeout(() => {
+      const el = privacyRef.current || document.querySelector('#privacy')
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
+  }
+
   useEffect(() => {
     if (!privacyOpen) return
-    const el = document.querySelector('#privacy')
+    const el = privacyRef.current || document.querySelector('#privacy')
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [privacyOpen])
 
   return (
     <div className="app">
-      <Nav onNavigate={() => setPrivacyOpen(false)} onOpenPrivacy={() => setPrivacyOpen(true)} />
+      <Nav onNavigate={() => setPrivacyOpen(false)} onOpenPrivacy={showPrivacy} />
       <main>
         <Hero />
         <About />
@@ -386,9 +395,9 @@ function App() {
         <Projects />
         <Tech />
         <Contact />
-        {privacyOpen && <PrivacyPolicy />}
+        {privacyOpen && <PrivacyPolicy ref={privacyRef} />}
       </main>
-      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
+      <Footer onOpenPrivacy={showPrivacy} />
     </div>
   )
 }
