@@ -333,7 +333,7 @@ const PrivacyPolicy = forwardRef(function PrivacyPolicy(_, ref) {
 })
 
 // small intersection observer for reveal-on-scroll
-function useReveal() {
+function useReveal(trigger) {
   useEffect(() => {
     const els = Array.from(document.querySelectorAll('.reveal'))
     if (!els.length) return
@@ -347,7 +347,7 @@ function useReveal() {
     }, { threshold: 0.12 })
     els.forEach(el => obs.observe(el))
     return () => obs.disconnect()
-  }, [])
+  }, [trigger])
 }
 
 
@@ -369,7 +369,7 @@ function App() {
   const [privacyOpen, setPrivacyOpen] = useState(false)
   const privacyRef = useRef(null)
 
-  useReveal()
+  useReveal(privacyOpen)
 
   const showPrivacy = () => {
     setPrivacyOpen(true)
