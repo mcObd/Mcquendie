@@ -7,6 +7,7 @@ import digilabImg from './assets/digilab.png'
 import greenyImg from './assets/greeny.png'
 import polysiteImg from './assets/polysite.png'
 import portraitImg from './assets/mcquendie_picture.jpg'
+import resumePdf from './assets/Mcquendie_Obodos_Resume.pdf'
 import html5Img from './assets/html5.jpg'
 import css3Img from './assets/css3.jpg'
 import javascriptImg from './assets/javascript.png'
@@ -76,7 +77,7 @@ function Nav() {
         <a href="#services" onClick={(e)=>handleNavClick(e,'#services')}>Services</a>
         <a href="#work" onClick={(e)=>handleNavClick(e,'#work')}>Work</a>
         <a href="#contact" onClick={(e)=>handleNavClick(e,'#contact')}>Contact</a>
-        <a className="cta" href="/Mcquendie_Obodos_Resume.pdf" target="_blank">Resume</a>
+        <a className="cta" href={resumePdf} download="Mcquendie_Obodos_Resume.pdf">Resume</a>
       </div>
 
       <button
@@ -94,7 +95,7 @@ function Nav() {
           <a href="#services" onClick={() => setOpen(false)}>Services</a>
           <a href="#work" onClick={() => setOpen(false)}>Work</a>
           <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-          <a className="cta" href="/Mcquendie_Obodos_Resume.pdf" target="_blank">Resume</a>
+          <a className="cta" href={resumePdf} download="Mcquendie_Obodos_Resume.pdf">Resume</a>
         </div>
       )}
     </nav>
@@ -199,7 +200,7 @@ function Projects() {
               <div className="tech" style={{ marginTop:8 }}>
                 {p.tech.map(t => <span className="chip" key={t}>{t}</span>)}
               </div>
-              <div style={{ marginTop:10 }}><a className="btn ghost" href={p.url} target="_blank" rel="noreferrer">View Live</a></div>
+              <div style={{ marginTop:10 }}><a className="btn ghost" href={p.url} target="_blank" rel="noopener noreferrer">View Live</a></div>
             </div>
           </article>
         ))}
@@ -281,12 +282,12 @@ function Contact() {
       <p style={{ marginTop: 12 }}>I'm always up for a good conversation.</p>
       <div className="cta-row reveal" style={{ marginTop: 18 }}>
         <a className="btn primary" href="mailto:obodosmcquendie@gmail.com">obodosmcquendie@gmail.com</a>
-        <a className="btn ghost" href="/Mcquendie_Obodos_Resume.pdf" target="_blank">Download Resume</a>
+        <a className="btn ghost" href={resumePdf} download="Mcquendie_Obodos_Resume.pdf">Download Resume</a>
       </div>
 
       <div className="social-grid reveal">
         {socials.map(s => (
-          <a key={s.name} className="social" href={s.url} target="_blank" rel="noreferrer">
+          <a key={s.name} className="social" href={s.url} target="_blank" rel="noopener noreferrer">
             <span className="icon">{s.icon}</span>
             <span style={{ marginLeft:8 }}>{s.name}</span>
           </a>
