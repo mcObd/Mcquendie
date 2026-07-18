@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "workspaces": [
+    "mcquendie"
+  ],
+  "scripts": {
+    "build": "npm --workspace mcquendie run build",
+    "dev": "npm --workspace mcquendie run dev",
+    "preview": "npm --workspace mcquendie run preview"
+  }
+}

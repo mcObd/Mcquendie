@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "mcquendie/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "outputDirectory": "mcquendie/dist"
+}
