@@ -1,111 +1,76 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Brand tokens - warm espresso palette */
+  --bg: #2b1d14;
+  --surface: #3a261b;
+  --text: #dcd1c6;
+  --text-muted: #bfaea0;
+  --text-strong: #fff7f2;
+  --border: rgba(92,58,33,0.18);
+  --shadow: 0 10px 30px rgba(28,18,13,0.6);
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --caramel: #a9702f;
+  --copper: #c98a4b;
+  --sand: #d9b48f;
+  --bronze: #5c3a21;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+
+  --sans: Inter, Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Space Grotesk', 'Clash Display', 'General Sans', system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+
+  font: 18px/1.6 var(--sans);
+  letter-spacing: 0.2px;
+  color-scheme: dark;
   color: var(--text);
   background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --container-width: 1100px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* Fonts — include recommended families (user may add or adjust locally) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap');
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+@media (max-width: 1024px) {
+  :root { font-size: 16px; }
 }
 
-body {
-  margin: 0;
-}
+body { margin: 0; background: var(--bg); }
 
 #root {
-  width: 1126px;
+  width: var(--container-width);
   max-width: 100%;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  padding: 28px 20px;
 }
 
-h1,
 h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
+h1, h2 { font-family: var(--heading); color: var(--text-strong); margin: 0; }
 
 h1 {
   font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  font-weight: 700;
+  letter-spacing: -1px;
 }
+
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--sand);
 }
-p {
-  margin: 0;
-}
+p { margin: 0; color: var(--text-muted); }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
+code { font-family: var(--mono); color: var(--sand); background: rgba(255,255,255,0.02); padding:4px 8px; border-radius:6px; }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
+/* Utility container */
+.container { width: 100%; max-width: var(--container-width); margin: 0 auto; }
+
+/* Anchor visibility for sticky nav offset */
+:target::before { content: ''; display: block; height: 84px; margin-top: -84px; }
