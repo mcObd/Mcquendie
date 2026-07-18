@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mcquendie.vercel.app/sitemap.xml
+# Do not block JS/CSS/images/fonts needed for rendering

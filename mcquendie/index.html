@@ -7,10 +7,14 @@
     <meta name="description" content="Mcquendie Obodos — Frontend developer and UI/UX designer in Lagos. I design polished interfaces and write SEO-focused copy that converts." />
     <meta name="google-site-verification" content="c0pI6GBr8ybl4ziY6gdbsjXsHuthUjHjJZuxWs5hcwk" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="canonical" href="https://mcquendie.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Mcquendie Obodos — Frontend Developer & UI/UX" />
     <meta property="og:description" content="I design polished interfaces and write the copy that turns visitors into clients. Based in Lagos, Nigeria." />
     <meta property="og:image" content="/assets/og-image.png" />
+    <meta property="og:url" content="https://mcquendie.vercel.app/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Mcquendie Obodos — Frontend Developer & UI/UX" />
     <meta name="twitter:description" content="I design polished interfaces and write the copy that turns visitors into clients. Based in Lagos, Nigeria." />
@@ -20,11 +24,102 @@
     <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), microphone=(), geolocation=(), gyroscope=(), magnetometer=(), payment=()" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"Person","name":"Mcquendie Obodos","jobTitle":"Frontend Developer, UI/UX Designer, Copywriter","email":"mailto:obodosmcquendie@gmail.com","url":"https://mcquendie.local","sameAs":["https://github.com/","https://www.linkedin.com/"]}
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mcquendie Obodos",
+        "jobTitle": "Frontend Developer, UI/UX Designer, Copywriter",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+        "email": "mailto:obodosmcquendie@gmail.com",
+        "url": "https://mcquendie.vercel.app/",
+        "sameAs": [
+          "https://www.linkedin.com/in/mcquendie-obodos-0536883aa/",
+          "https://github.com/mcObd",
+          "https://www.instagram.com/mcquendie_?igsh=MTIveTh3cHhpa2VyaA==",
+          "https://www.tiktok.com/@mcquendie_?_t=ZM-8xchTobGSxk&_r=1",
+          "https://x.com/Mcquendie",
+          "https://www.facebook.com/mcquendie.obodos?rdid=CD2DsSKwCykU5hoo&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GrENVQY8S%2F#",
+          "https://www.threads.com/@mcquendie_",
+          "https://wa.me/message/PR6PLI5D6K4MJ1"
+        ],
+        "knowsAbout": ["React","JavaScript","Tailwind CSS","Supabase","HTML5","CSS3","Figma","Cursor","Codex","Git","Vercel"]
+      }
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main>
+        <section class="hero-section container" id="home">
+          <div class="hero-left">
+            <div class="tagline">Frontend Developer + UI/UX Designer</div>
+            <h1 class="reveal">Mcquendie Obodos</h1>
+            <div class="typing reveal" style="margin-bottom:8px">I design polished interfaces and write the copy that turns visitors into clients.</div>
+            <p>I build fast, responsive interfaces and write the copy that turns visitors into clients.</p>
+            <div class="actions" style="margin-top:18px">
+              <a class="btn primary" href="#contact">Let's Build Something</a>
+              <a class="btn ghost" href="#work">View My Work</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="portrait" aria-hidden="true" style="width:100%;max-width:420px;height:220px;background:#eee;border-radius:16px;" />
+          </div>
+        </section>
+
+        <section class="about container" id="about">
+          <h2>About</h2>
+          <h3>I build polished, responsive interfaces — and write the copy that makes people stick around.</h3>
+          <p>Currently deepening backend skills in C# and Java. Open to freelance, collaboration, and full-time frontend roles.</p>
+        </section>
+
+        <section class="services container" id="services">
+          <h2>Services</h2>
+          <h3>What I do</h3>
+          <div class="services-grid" style="margin-top:18px">
+            <div class="card"><h3>Web Design</h3><p>Interfaces people actually want to use — clean, intentional, and built to convert.</p></div>
+            <div class="card"><h3>Web Development</h3><p>Fast, responsive builds with clean component architecture, from landing page to full product.</p></div>
+            <div class="card"><h3>Copywriting & SEO</h3><p>Words that rank, read well, and move people to act.</p></div>
+          </div>
+        </section>
+
+        <section class="projects container" id="work">
+          <h2>Featured Work</h2>
+          <h3>Selected projects</h3>
+          <div class="projects-grid" style="margin-top:18px">
+            <article class="project card"><div class="meta"><h3>DigiLab</h3><p>Business landing page — sharp, fast, conversion-focused</p></div></article>
+            <article class="project card"><div class="meta"><h3>Greeny</h3><p>Sustainable e-commerce concept — product-first, accessible</p></div></article>
+            <article class="project card"><div class="meta"><h3>PolySite</h3><p>Creative agency template — bold, scroll-based energy</p></div></article>
+          </div>
+        </section>
+
+        <section class="tech container" id="tech">
+          <h2>Toolbox</h2>
+          <h3>Tech stack</h3>
+          <p>React, JavaScript, Tailwind CSS, Supabase, HTML5, CSS3, Figma, Cursor, Codex, Git, Vercel</p>
+        </section>
+
+        <section class="contact container" id="contact">
+          <h2>Let's Build Something</h2>
+          <h3>Got a project in mind, or just want to talk shop?</h3>
+          <p>I'm always up for a good conversation.</p>
+          <div class="social-grid">
+            <a href="https://www.linkedin.com/in/mcquendie-obodos-0536883aa/">LinkedIn</a>
+            <a href="https://github.com/mcObd">GitHub</a>
+            <a href="https://www.instagram.com/mcquendie_?igsh=MTIveTh3cHhpa2VyaA==">Instagram</a>
+            <a href="https://www.tiktok.com/@mcquendie_?_t=ZM-8xchTobGSxk&_r=1">TikTok</a>
+            <a href="https://x.com/Mcquendie">X</a>
+            <a href="https://www.facebook.com/mcquendie.obodos?rdid=CD2DsSKwCykU5hoo&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GrENVQY8S%2F#">Facebook</a>
+            <a href="https://www.threads.com/@mcquendie_">Threads</a>
+            <a href="https://wa.me/message/PR6PLI5D6K4MJ1">WhatsApp</a>
+          </div>
+        </section>
+
+        <section class="privacy container" id="privacy">
+          <h2>Privacy Policy</h2>
+          <h3>How this website handles your information</h3>
+          <p>This website is a personal portfolio for Mcquendie Obodos. It does not sell, rent, or trade visitor information.</p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

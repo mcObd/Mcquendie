@@ -141,7 +141,7 @@ function Hero() {
 
       <div className="hero-right">
         <div className="portrait reveal" style={{ width: '100%', maxWidth: 420 }}>
-          <img src={portraitImg} alt="Mcquendie Obodos" style={{ width: '100%', borderRadius: 16, boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} />
+          <img loading="eager" src={portraitImg} alt="Mcquendie Obodos" style={{ width: '100%', borderRadius: 16, boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} />
         </div>
       </div>
 
@@ -155,7 +155,7 @@ function About() {
   return (
     <section className="about container" id="about">
       <h2 className="reveal">About</h2>
-      <h1 className="reveal">I build polished, responsive interfaces — and write the copy that makes people stick around.</h1>
+      <h3 className="reveal">I build polished, responsive interfaces — and write the copy that makes people stick around.</h3>
       <p className="reveal" style={{ marginTop: 12 }}>Currently deepening backend skills in C# and Java. Open to freelance, collaboration, and full-time frontend roles.</p>
       <div className="chips reveal">
         {chips.map((c) => <span className="chip" key={c}>{c}</span>)}
@@ -168,7 +168,7 @@ function Services() {
   return (
     <section className="services container" id="services">
       <h2>Services</h2>
-      <h1>What I do</h1>
+      <h3>What I do</h3>
       <div className="services-grid reveal" style={{ marginTop: 18 }}>
         <div className="card">
           <div style={{display:'flex', gap:12, alignItems:'center'}}><FaPaintBrush size={28} style={{color:'var(--accent)'}} /><h3>Web Design</h3></div>
@@ -197,11 +197,11 @@ function Projects() {
   return (
     <section className="projects container" id="work">
       <h2>Featured Work</h2>
-      <h1>Selected projects</h1>
+      <h3>Selected projects</h3>
       <div className="projects-grid reveal" style={{ marginTop: 18 }}>
         {items.map(p => (
           <article className="project card" key={p.key}>
-            <img src={p.img} alt={p.title} onError={(e)=>{e.currentTarget.style.background='#f6f4ef'}} />
+            <img loading="lazy" src={p.img} alt={p.title} onError={(e)=>{e.currentTarget.style.background='#f6f4ef'}} />
             <div className="meta">
               <h3>{p.title}</h3>
               <p style={{ color:'var(--text-muted)' }}>{p.desc}</p>
@@ -249,7 +249,7 @@ function Tech() {
   return (
     <section className="tech container" id="tech">
       <h2>Toolbox</h2>
-      <h1>Tech stack</h1>
+      <h3>Tech stack</h3>
       <div className="tech-row reveal" style={{ marginTop: 16 }}>
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
@@ -257,7 +257,7 @@ function Tech() {
               <div className="embla__slide" key={i.k}>
                 <div className="tech-card" title={i.k}>
                   <div className="tech-image">
-                    <img src={i.img} alt={i.k} />
+                    <img loading="lazy" src={i.img} alt={i.k} />
                   </div>
                   <div className="tech-name">{i.k}</div>
                 </div>
@@ -286,7 +286,7 @@ function Contact() {
   return (
     <section className="contact container" id="contact">
       <h2>Let's Build Something</h2>
-      <h1>Got a project in mind, or just want to talk shop?</h1>
+      <h3>Got a project in mind, or just want to talk shop?</h3>
       <p style={{ marginTop: 12 }}>I'm always up for a good conversation.</p>
       <div className="cta-row reveal" style={{ marginTop: 18 }}>
         <a className="btn primary" href="mailto:obodosmcquendie@gmail.com">obodosmcquendie@gmail.com</a>
@@ -309,7 +309,7 @@ const PrivacyPolicy = forwardRef(function PrivacyPolicy(_, ref) {
   return (
     <section className="privacy container" id="privacy" ref={ref}>
       <h2>Privacy Policy</h2>
-      <h1>How this website handles your information</h1>
+      <h3>How this website handles your information</h3>
       <div className="privacy-content reveal">
         <p>
           This website is a personal portfolio for Mcquendie Obodos. It does not sell, rent, or trade visitor information.
