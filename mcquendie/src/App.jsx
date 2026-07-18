@@ -58,14 +58,20 @@ function useTypewriter(lines, typeSpeed = 40, pause = 1600) {
   return text
 }
 
-function Nav() {
+function Nav({ onNavigate, onOpenPrivacy }) {
   const [open, setOpen] = useState(false)
   const handleNavClick = (e, selector) => {
     e.preventDefault()
-    const el = document.querySelector(selector)
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (selector === '#privacy') {
+      onOpenPrivacy()
+    } else {
+      onNavigate()
+      const el = document.querySelector(selector)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
     setOpen(false)
   }
+
   return (
     <nav className="nav container">
       <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
@@ -92,11 +98,11 @@ function Nav() {
 
       {open && (
         <div className="mobile-menu" role="dialog" aria-modal="true">
-          <a href="#about" onClick={() => setOpen(false)}>About</a>
-          <a href="#services" onClick={() => setOpen(false)}>Services</a>
-          <a href="#work" onClick={() => setOpen(false)}>Work</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-          <a href="#privacy" onClick={() => setOpen(false)}>Privacy</a>
+          <a href="#about" onClick={(e) => { handleNavClick(e, '#about') }}>About</a>
+          <a href="#services" onClick={(e) => { handleNavClick(e, '#services') }}>Services</a>
+          <a href="#work" onClick={(e) => { handleNavClick(e, '#work') }}>Work</a>
+          <a href="#contact" onClick={(e) => { handleNavClick(e, '#contact') }}>Contact</a>
+          <a href="#privacy" onClick={(e) => { handleNavClick(e, '#privacy') }}>Privacy</a>
           <a className="cta" href={resumePdf} download="Mcquendie_Obodos_Resume.pdf">Resume</a>
         </div>
       )}
@@ -345,7 +351,7 @@ function useReveal() {
 }
 
 
-function Footer() {
+function Footer({ onOpenPrivacy }) {
   return (
     <footer className="footer container">
       <div>© {new Date().getFullYear()} Mcquendie Obodos</div>
@@ -353,17 +359,26 @@ function Footer() {
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#privacy" onClick={(e) => { e.preventDefault(); onOpenPrivacy() }}>Privacy</a>
       </div>
     </footer>
   )
 }
 
 function App() {
+  const [privacyOpen, setPrivacyOpen] = useState(false)
+
   useReveal()
+
+  useEffect(() => {
+    if (!privacyOpen) return
+    const el = document.querySelector('#privacy')
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [privacyOpen])
+
   return (
     <div className="app">
-      <Nav />
+      <Nav onNavigate={() => setPrivacyOpen(false)} onOpenPrivacy={() => setPrivacyOpen(true)} />
       <main>
         <Hero />
         <About />
@@ -371,9 +386,9 @@ function App() {
         <Projects />
         <Tech />
         <Contact />
-        <PrivacyPolicy />
+        {privacyOpen && <PrivacyPolicy />}
       </main>
-      <Footer />
+      <Footer onOpenPrivacy={() => setPrivacyOpen(true)} />
     </div>
   )
 }
