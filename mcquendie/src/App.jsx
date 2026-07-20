@@ -432,7 +432,7 @@ function ProjectCard({ project, index }) {
       <div className="meta">
         <h3>{project.title}</h3>
         <p style={{ color: 'var(--text-muted)' }}>{project.desc}</p>
-        <div className="tech" style={{ marginTop: 8 }}>
+        <div className="tech">
           {project.tech.map(t => <span className="chip" key={t}>{t}</span>)}
         </div>
         <div className="project-link">
