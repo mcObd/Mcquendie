@@ -29,6 +29,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --container-width: 1100px;
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 1024px) {
@@ -89,3 +90,31 @@ code { font-family: var(--mono); color: var(--sand); background: rgba(255,255,25
 
 /* Anchor visibility for sticky nav offset */
 :target::before { content: ''; display: block; height: 84px; margin-top: -84px; }
+
+/* Scroll progress bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  z-index: 10000;
+  width: 0%;
+  pointer-events: none;
+  transition: width 0.1s ease-out;
+}
+
+/* Hide default cursor on desktop screens when custom cursor is used */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active .social,
+  body.custom-cursor-active .card,
+  body.custom-cursor-active .embla,
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea {
+    cursor: none !important;
+  }
+}
