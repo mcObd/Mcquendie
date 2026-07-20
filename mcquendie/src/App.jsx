@@ -151,15 +151,11 @@ function Hero() {
 }
 
 function About() {
-  const chips = ['React', 'JavaScript', 'Supabase', 'Tailwind CSS', 'Figma', 'Cursor', 'Codex', 'Git']
   return (
     <section className="about container" id="about">
       <h2 className="reveal">About</h2>
       <h3 className="reveal">I build polished, responsive interfaces — and write the copy that makes people stick around.</h3>
       <p className="reveal" style={{ marginTop: 12 }}>Currently deepening backend skills in C# and Java. Open to freelance, collaboration, and full-time frontend roles.</p>
-      <div className="chips reveal">
-        {chips.map((c) => <span className="chip" key={c}>{c}</span>)}
-      </div>
     </section>
   )
 }
@@ -208,7 +204,7 @@ function Projects() {
               <div className="tech" style={{ marginTop:8 }}>
                 {p.tech.map(t => <span className="chip" key={t}>{t}</span>)}
               </div>
-              <div style={{ marginTop:10 }}><a className="btn ghost" href={p.url} target="_blank" rel="noopener noreferrer">View Live</a></div>
+              <div className="project-link"><a className="btn ghost" href={p.url} target="_blank" rel="noopener noreferrer">View Live</a></div>
             </div>
           </article>
         ))}
@@ -232,26 +228,58 @@ function Tech() {
     { k: 'Git', img: gitImg }
   ]
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, containScroll: 'trimSnaps', align: 'center', draggable: true, speed: 8 })
+  const [autoplayPaused, setAutoplayPaused] = useState(false)
+  const resumeTimerRef = useRef(null)
 
   useEffect(() => {
     if (!emblaApi) return
-    const autoScroll = setInterval(() => {
+
+    let intervalId = null
+
+    const scrollNext = () => {
       if (!emblaApi) return
       if (emblaApi.canScrollNext()) {
         emblaApi.scrollNext()
       } else {
         emblaApi.scrollTo(0)
       }
-    }, 2800)
-    return () => clearInterval(autoScroll)
-  }, [emblaApi])
+    }
+
+    const startAutoplay = () => {
+      clearInterval(intervalId)
+      intervalId = setInterval(scrollNext, 2800)
+    }
+
+    const pauseAutoplay = () => {
+      clearInterval(intervalId)
+      clearTimeout(resumeTimerRef.current)
+    }
+
+    if (autoplayPaused) {
+      pauseAutoplay()
+    } else {
+      startAutoplay()
+    }
+
+    return () => {
+      clearInterval(intervalId)
+      clearTimeout(resumeTimerRef.current)
+    }
+  }, [emblaApi, autoplayPaused])
 
   return (
     <section className="tech container" id="tech">
       <h2>Toolbox</h2>
       <h3>Tech stack</h3>
       <div className="tech-row reveal" style={{ marginTop: 16 }}>
-        <div className="embla" ref={emblaRef}>
+        <div
+          className="embla"
+          ref={emblaRef}
+          onMouseEnter={() => { clearTimeout(resumeTimerRef.current); setAutoplayPaused(true) }}
+          onMouseLeave={() => { resumeTimerRef.current = setTimeout(() => setAutoplayPaused(false), 260) }}
+          onFocus={() => { clearTimeout(resumeTimerRef.current); setAutoplayPaused(true) }}
+          onBlur={() => { resumeTimerRef.current = setTimeout(() => setAutoplayPaused(false), 260) }}
+        >
           <div className="embla__container">
             {items.map(i => (
               <div className="embla__slide" key={i.k}>

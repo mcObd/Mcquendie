@@ -43,7 +43,7 @@
 .hero-right { flex:1; display:flex; justify-content:center }
 .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height:0.95; margin-bottom:12px }
 .tagline { color:var(--accent); font-weight:600; margin-bottom:12px }
-.hero p { max-width:640px; color:var(--text-muted); margin-bottom:18px }
+.hero p { max-width:640px; color:var(--text-muted); margin-bottom:18px; font-weight:400 }
 .hero .actions { display:flex; gap:12px }
 .btn { padding:12px 18px; border-radius:10px; border:1px solid transparent; cursor:pointer }
 .btn.primary { background: linear-gradient(90deg,var(--accent-2),var(--accent)); color:var(--text-strong); box-shadow:var(--shadow) }
@@ -54,18 +54,25 @@
 .about, .services, .projects, .tech, .contact, .privacy { padding:56px 0; }
 
 .chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
-.chip { background: rgba(0,0,0,0.03); color:var(--text); padding:10px 12px; border-radius:999px; font-weight:600; border:1px solid rgba(0,0,0,0.04); font-size:15px }
+.about h3 { font-size: clamp(1.1rem, 2.2vw, 1.35rem); font-weight:700; color:var(--text-strong); line-height:1.5; margin-top:12px }
+.chip { background: rgba(0,0,0,0.03); color:var(--text-muted); padding:10px 12px; border-radius:999px; font-weight:500; border:1px solid rgba(0,0,0,0.04); font-size:15px }
 
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.02); transition: transform 0.28s, box-shadow 0.28s }
+.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.02); transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease, opacity 0.28s ease }
 .card:hover { transform: translateY(-8px); box-shadow: var(--shadow) }
-.card h3 { margin-top:0; color:var(--text-strong) }
+.card h3 { margin-top:0; color:var(--text-strong); font-weight:700 }
+.card p { color:var(--text-muted); font-weight:400 }
 
-.projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-.project { overflow:hidden; min-width: 0 }
+.projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; align-items:stretch }
+.project { overflow:hidden; min-width: 0; display:flex; flex-direction:column; height:100%; transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease, opacity 0.28s ease }
 .project img { width:100%; max-width:100%; height:auto; object-fit:cover; border-radius:10px; display:block }
-.project .meta { padding:12px }
+.project .meta { padding:12px; display:flex; flex-direction:column; flex:1 }
+.project .meta h3 { color:var(--text-strong); font-weight:700 }
+.project .meta p { color:var(--text-muted); font-weight:400; min-height:3.2em; line-height:1.6; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden }
 .project .tech { display:flex; gap:8px; flex-wrap:wrap }
+.project .project-link { margin-top:auto; padding-top:12px }
+.projects-grid:hover .project:not(:hover) { filter: saturate(0.8) brightness(0.92); opacity:0.86 }
+.project:hover { transform: translateY(-6px) scale(1.01); box-shadow: var(--shadow); filter: saturate(1.02) brightness(1) }
 
 .tech-row { display:flex; gap:14px; flex-wrap:nowrap; align-items:center; overflow-x: hidden; min-width: 0 }
 
@@ -75,7 +82,7 @@
 .tech-image { width:100px; height:100px; border-radius:18px; overflow:hidden; background: rgba(255,255,255,0.95); border:1px solid rgba(0,0,0,0.04); display:flex; align-items:center; justify-content:center }
 .tech-image img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.34s ease }
 .tech-card:hover .tech-image img { transform: scale(1.04) }
-.tech-name { font-weight:700; margin-top:0; letter-spacing:0.02em }
+.tech-name { font-weight:500; color:var(--text-muted); margin-top:0; letter-spacing:0.02em }
 
 /* Embla carousel styles */
 .embla { overflow: hidden; width: 100% }
@@ -83,8 +90,8 @@
 .embla__slide { flex: 0 0 auto; scroll-snap-align: center }
 
 .contact .cta-row { display:flex; gap:12px; align-items:center }
-.social-grid { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px }
-.social { display:flex; gap:10px; align-items:center; padding:12px 14px; background: rgba(0,0,0,0.03); border-radius:12px; font-weight:700; font-size:16px }
+.social-grid { display:flex; gap:12px; flex-wrap:wrap; margin-top:32px; padding-top:20px; border-top:1px solid var(--border) }
+.social { display:flex; gap:10px; align-items:center; padding:12px 14px; background: rgba(0,0,0,0.03); border-radius:12px; font-weight:500; font-size:16px; color:var(--text-muted) }
 .social span.icon { width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; color:var(--accent) }
 
 .privacy-content { margin-top:18px; display:grid; gap:14px; max-width:840px; color:var(--text-muted) }
@@ -130,8 +137,8 @@
 @keyframes blink { 50% { opacity: 0 } }
 
 /* Portrait hover: default grayscale, reveal color on hover */
-.portrait img { filter: grayscale(100%); transition: filter 260ms ease, transform 260ms ease, box-shadow 260ms ease; border-radius:16px }
-.portrait img:hover { filter: grayscale(0%); transform: scale(1.02); box-shadow: 0 14px 40px rgba(0,0,0,0.08) }
+.portrait img { filter: grayscale(100%); -webkit-filter: grayscale(100%); transition: filter 220ms ease, transform 220ms ease, box-shadow 220ms ease; border-radius:16px; display:block }
+.portrait img:hover { filter: grayscale(0%); -webkit-filter: grayscale(0%); transform: scale(1.02); box-shadow: 0 14px 40px rgba(0,0,0,0.08) }
 
 /* Social icon hover color + lift */
 .social span.icon { transition: color 200ms ease, transform 200ms ease; color:var(--accent) }
