@@ -13,6 +13,8 @@
   /* neutral accents (ash/grey) */
   --accent: #92979b;
   --accent-2: #bfc4c6;
+  --accent-3: rgb(247, 204, 167);
+  --accent-4: red;
   --glass: rgba(18,18,18,0.02);
   --glass-2: rgba(18,18,18,0.01);
 
@@ -97,7 +99,7 @@ code { font-family: var(--mono); color: var(--sand); background: rgba(255,255,25
   top: 0;
   left: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent-4), var(--accent-3));
   z-index: 10000;
   width: 0%;
   pointer-events: none;
