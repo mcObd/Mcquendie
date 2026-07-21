@@ -19,6 +19,7 @@ import cursorImg from './assets/cursor.jpg'
 import codexImg from './assets/codex.jpg'
 import vercelImg from './assets/vercel.jpg'
 import gitImg from './assets/git.png'
+import logoImg from './assets/McQuendie Logo Identity.png'
 
 const TAGLINES = [
   'I design it, build it, and write the words that sell it.',
@@ -456,8 +457,8 @@ function Nav({ scrolled, activeSection, onNavigate, onOpenPrivacy }) {
   }
   return (
     <nav className={`nav container${scrolled ? ' scrolled' : ''}`}>
-      <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
-        <div className="brand">Mcquendie Obodos</div>
+      <div className="brand-wrap">
+        <img className="nav-logo" src={logoImg} alt="Mcquendie Obodos logo" />
       </div>
       <div className="links" aria-hidden={open ? 'false' : 'true'}>
         {[['about','About'],['services','Services'],['work','Work'],['contact','Contact'],['privacy','Privacy']].map(([id, label]) => (
